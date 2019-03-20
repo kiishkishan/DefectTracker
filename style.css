@@ -11,5 +11,7 @@
     transform-style: preserve-3d;
     transition-delay: 20ms;
     transition-duration: 400ms;
+    box-shadow: 1px 3px 2px 1px #727272;
+    text-shadow: 0.4px 0.3px blanchedalmond;
 }
 
