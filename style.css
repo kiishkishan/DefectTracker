@@ -2,5 +2,14 @@
     background: blue;
     z-index: 500;
     border-radius: 2px;
-    border-spacing: 10px;
+    border: 10px 15px 13px 15px green;
+    color: white;
+    height: 40px;
+    width: 150px;
+    margin-left: 4px;
+    transform: scaleY(1.0);
+    transform-style: preserve-3d;
+    transition-delay: 20ms;
+    transition-duration: 400ms;
 }
+

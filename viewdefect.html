@@ -34,11 +34,20 @@
                 <!-- Dropdown -->
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown"
-                        aria-haspopup="true" aria-expanded="false">Dropdown</a>
+                        aria-haspopup="true" aria-expanded="false">Users</a>
                     <div class="dropdown-menu dropdown-primary" aria-labelledby="navbarDropdownMenuLink">
-                        <a class="dropdown-item" href="#" id="dd">Action</a>
-                        <a class="dropdown-item" href="#">Another action</a>
-                        <a class="dropdown-item" href="#">Something else here</a>
+                        <a class="dropdown-item" href="#" id="dd">Create User</a>
+                        <a class="dropdown-item" href="#" id="dd">View Users</a>
+                        <a class="dropdown-item" href="#" id="dd">Delete Users</a>
+                    </div>
+                </li>
+                <!-- Dropdown -->
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown"
+                        aria-haspopup="true" aria-expanded="false">Defect</a>
+                    <div class="dropdown-menu dropdown-primary" aria-labelledby="navbarDropdownMenuLink">
+                        <a class="dropdown-item" href="adddefect.html" id="dd">Create a Defect</a>
+                        <a class="dropdown-item" href="viewdefect.html" id="dd">Manage the Defect</a>
                     </div>
                 </li>
             </ul>
@@ -48,55 +57,61 @@
     <div class="row" style="margin: 50px;"></div>
 
     <div class="container-fluid">
-        <!--Table-->
-        <table id="tablePreview" class="table table-striped table-hover table-bordered">
-            <!--Table head-->
-            <thead>
-                <tr>
-                    <th>Defect ID</th>
-                    <th>Module</th>
-                    <th>Description</th>
-                    <th>Steps to Recreate</th>
-                    <th>Severity</th>
-                    <th>Priority</th>
-                    <th>Defect Type</th>
-                    <th>Entered By</th>
-                    <th>Entered Date</th>
-                    <th>Status</th>
-                    <th>Assigned To</th>
-                    <th>Fixed By</th>
-                    <th>Fixed Date</th>
-                    <th>Available in</th>
-                    <th>Comments</th>
-                </tr>
-            </thead>
-            <!--Table head-->
-            <!--Table body-->
-            <tbody>
-                <tr>
-                    <th scope="row">1</th>
-                    <td>Mark</td>
-                    <td>Otto</td>
-                    <td>@mdo</td>
-                    <td>Mark</td>
-                    <td>Otto</td>
-                    <td>@mdo</td>
-                    <td>Mark</td>
-                    <td>Otto</td>
-                    <td>@mdo</td>
-                    <td>Mark</td>
-                    <td>Otto</td>
-                    <td>@mdo</td>
-                    <td>Otto</td>
-                    <td>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Beatae, sit dolorem iure odio omnis
-                        qui, vero mollitia esse veniam architecto expedita officia fugit blanditiis repudiandae modi
-                        repellat harum totam excepturi!</td>
-                </tr>
 
-            </tbody>
-            <!--Table body-->
-        </table>
-        <!--Table-->
+        <div class="row">
+
+            <!--Table-->
+            <table class="table table-striped w-auto table-responsive-lg table-fixed tblwdadjust">
+
+                <!--Table head-->
+                <thead>
+                    <tr>
+                        <th>Defect ID</th>
+                        <th>Module</th>
+                        <th>Description</th>
+                        <th>Steps to Recreate</th>
+                        <th>Severity</th>
+                        <th>Priority</th>
+                        <th>Defect Type</th>
+                        <th>Entered By</th>
+                        <th>Entered Date</th>
+                        <th>Status</th>
+                        <th>Assigned To</th>
+                        <th>Fixed By</th>
+                        <th>Fixed Date</th>
+                        <th>Available in</th>
+                        <th>Comments</th>
+                    </tr>
+                </thead>
+                <!--Table head-->
+                <!--Table body-->
+                <tbody>
+                    <tr>
+                        <th scope="row">1</th>
+                        <td>Defect001</td>
+                        <td>Otto</td>
+                        <td>@mdo</td>
+                        <td>Mark</td>
+                        <td>Otto</td>
+                        <td>@mdo</td>
+                        <td>Mark</td>
+                        <td>Otto</td>
+                        <td>@mdo</td>
+                        <td>Mark</td>
+                        <td>Otto</td>
+                        <td>@mdo</td>
+                        <td>Otto</td>
+                        <td>Lorem ipsum dolor sit amet!</td>
+                    </tr>
+
+                </tbody>
+                <!--Table body-->
+
+
+            </table>
+            <!--Table-->
+
+        </div>
 
     </div>
 
