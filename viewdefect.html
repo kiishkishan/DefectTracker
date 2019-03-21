@@ -69,6 +69,7 @@
                     <!--Table head-->
                     <thead>
                         <tr>
+                            <th scope="row">#</th>
                             <th>Defect ID</th>
                             <th>Module</th>
                             <th>Description</th>
@@ -88,24 +89,7 @@
                     </thead>
                     <!--Table head-->
                     <!--Table body-->
-                    <tbody>
-                        <tr>
-                            <th scope="row">1</th>
-                            <td>Defect001</td>
-                            <td>Otto</td>
-                            <td>@mdo</td>
-                            <td>Mark</td>
-                            <td>Otto</td>
-                            <td>@mdo</td>
-                            <td>Mark</td>
-                            <td>Otto</td>
-                            <td>@mdo</td>
-                            <td>Mark</td>
-                            <td>Otto</td>
-                            <td>@mdo</td>
-                            <td>Otto</td>
-                            <td>Lorem ipsum dolor sit amet!</td>
-                        </tr>
+                    <tbody id="getresult">
 
                     </tbody>
                     <!--Table body-->
@@ -119,6 +103,67 @@
         </div>
 
     </div>
+
+    <!-- Ajax Part Start-->
+    <script>
+
+
+        var xhr = new XMLHttpRequest();
+        xhr.open('GET', 'http://localhost:3000/defect', true);
+
+        console.log('sefa')
+        xhr.onload = function () {
+            //  const getval = { Priority };
+            if (this.status == 200) {
+                let details = JSON.parse(this.responseText);
+                // var details = JSON.parse(getval.responseText.map(rs => {
+                //     `${rs.Priority}`
+                // }));
+                var output = '';
+
+                for (var i in details) {
+                    output += '<tr>' +
+                        '<td scope="row">' + details[i].id + '</td>' +
+                        '<td>' + details[i].Defect_ID + '</td>' +
+                        '<td>' + details[i].Module + '</td>' +
+                        '<td>' + details[i].Description + '</td>' +
+                        '<td>' + details[i].Steps_to_recreate + '</td>' +
+                        '<td>' + details[i].Severity + '</td>' +
+                        '<td>' + details[i].Priority + '</td>' +
+                        '<td>' + details[i].Defect_Type + '</td>' +
+                        '<td>' + details[i].Entered_By + '</td>' +
+                        '<td>' + details[i].Entered_Date + '</td>' +
+                        '<td>' + details[i].Status + '</td>' +
+                        '<td>' + details[i].Assigned_To + '</td>' +
+                        '<td>' + details[i].Fixed_By + '</td>' +
+                        '<td>' + details[i].Fixed_Date + '</td>' +
+                        '<td>' + details[i].Available_in + '</td>' +
+                        '<td>' + details[i].Comments + '</td>' +
+                        '</tr>';
+                }
+
+                // let x = details[0].Priority;
+                // console.log(xhr);
+                // console.log(details);
+                // console.log(x);
+                //   var output = deta;
+
+                //  output += '<td>' + details.Defect_ID + '</td>';
+
+
+                document.getElementById('getresult').innerHTML = output;
+            }
+            else {
+                console.log('not connected');
+            }
+        }
+        xhr.send();
+
+
+
+    </script>
+
+    <!-- Ajax Part End-->
 
 
     <!-- JQuery -->

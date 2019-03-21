@@ -54,75 +54,163 @@
     </nav>
     <!-- nav bar end -->
     <div class="container">
-        <div class="row"></div>
-        <div class="row">
-            <div class="col">
-                1 of 3
+        <div class="wrapper animated bounceInLeft">
+            <div class="company-info">
+                <h3>Defect Entry</h3>
+
+
             </div>
-            <div class="col-6">
-                <!-- Material form contact -->
-                <div class="card">
+            <div class="contact">
 
-                    <h5 class="card-header info-color white-text text-center py-4">
-                        <strong>Contact us</strong>
-                    </h5>
+                <form name="defAdd">
+                    <p>
+                        <label>Defect ID</label>
+                        <input type="text" name="defectid" id="defectid">
+                    </p>
+                    <p>
+                        <label>Module</label>
+                        <select id="module">
+                            <option value="Main Menu">Main Menu</option>
+                            <option value="Login">Login</option>
+                            <option value="SignUp">SignUp</option>
+                        </select>
+                    </p>
+                    <p class="full">
+                        <label>Description</label>
+                        <textarea name="message" rows="5" id="description"></textarea>
+                    </p>
+                    <p class="full">
+                        <label>Steps to Recreate</label>
+                        <textarea name="message" rows="5" id="stepstorecreate"></textarea>
+                    </p>
 
-                    <!--Card content-->
-                    <div class="card-body px-lg-5 pt-0">
+                    <p>
+                        <label>Severity</label>
+                        <select id="severity">
+                            <option value="High">High</option>
+                            <option value="Medium">Medium</option>
+                            <option value="Low">Low</option>
+                        </select>
+                    </p>
+                    <p>
+                        <label>Priority</label>
+                        <select id="priority">
+                            <option value="High">High</option>
+                            <option value="Medium">Medium</option>
+                            <option value="Low">Low</option>
+                        </select>
+                    </p>
 
-                        <!-- Form -->
-                        <form class="text-center" style="color: #757575;">
+                    <p>
+                        <label>Defect Type</label>
+                        <select id="defecttype">
+                            <option value="UI">UI</option>
+                            <option value="Functionality">Functionality</option>
+                            <option value="Performance">Performance</option>
+                        </select>
+                    </p>
 
-                            <!-- Name -->
-                            <div class="md-form mt-3">
-                                <input type="text" id="materialContactFormName" class="form-control">
-                                <label for="materialContactFormName">Name</label>
-                            </div>
+                    <p>
+                        <label>Entered By</label>
+                        <select id="enteredby">
+                            <option value="user1">user1</option>
+                            <option value="user2">user2</option>
 
-                            <!-- E-mail -->
-                            <div class="md-form">
-                                <input type="email" id="materialContactFormEmail" class="form-control">
-                                <label for="materialContactFormEmail">E-mail</label>
-                            </div>
-
-                            <!-- Subject -->
-                            <span>Subject</span>
-                            <select class="mdb-select md-form">
-                                <option value="" disabled>Choose option</option>
-                                <option value="1" selected>Feedback</option>
-                                <option value="2">Report a bug</option>
-                                <option value="3">Feature request</option>
-                                <option value="4">Feature request</option>
-                            </select>
-
-                            <!--Message-->
-                            <div class="md-form">
-                                <textarea id="materialContactFormMessage" class="form-control md-textarea"
-                                    rows="3"></textarea>
-                                <label for="materialContactFormMessage">Message</label>
-                            </div>
+                        </select>
+                    </p>
 
 
+                    <p>
+                        <label>Entered Date</label>
+                        <input type="date" name="bday" id="entereddate">
+                    </p>
+                    <p>
+                        <label>Status</label>
+                        <select id="status">
+                            <option value="New">New</option>
+                            <option value="Open">Open</option>
+                            <option value="Fixed">Fixed</option>
 
-                            <!-- Send button -->
-                            <button class="btn btn-outline-info btn-rounded btn-block z-depth-0 my-4 waves-effect"
-                                type="submit">Send</button>
+                        </select>
+                    </p>
 
-                        </form>
-                        <!-- Form -->
+                    <p>
+                        <label>Assigned To</label>
+                        <select id="assignedto">
+                            <option value="user1">user1</option>
+                            <option value="user2">user2</option>
 
-                    </div>
+                        </select>
+                    </p>
 
-                </div>
-                <!-- Material form contact -->
-            </div>
-            <div class="col">
-                3 of 3
+                    <p>
+                        <label>Fixed By</label>
+                        <select id="fixedby">
+                            <option value="user1">user1</option>
+                            <option value="user2">user2</option>
+
+                        </select>
+                    </p>
+                    <p>
+                        <label>Fixed Date</label>
+                        <input type="date" name="bday" id="fixeddate">
+                    </p>
+
+                    <p>
+                        <label>Available In</label>
+                        <input type="text" name="available in" id="availablein">
+                    </p>
+
+
+                    <p class="full">
+                        <label>Comments</label>
+                        <textarea name="message" rows="5" id="comments"></textarea>
+                    </p>
+                    <p class="full">
+                        <button type="button" onclick="addDefect()" id="btn-submit">Submit</button>
+                    </p>
+                </form>
             </div>
         </div>
 
-
     </div>
+
+    <!-- ajax part start -->
+    <script>
+        // console.log("asfas");
+        function addDefect() {
+
+            var data = JSON.stringify({
+                "Defect_ID": document.getElementById('defectid').value,
+                "Module": document.getElementById('module').value,
+                "Description": document.getElementById('description').value,
+                "Steps_to_recreate": document.getElementById('stepstorecreate').value,
+                "Severity": document.getElementById('severity').value,
+                "Priority": document.getElementById('priority').value,
+                "Defect_Type": document.getElementById('defecttype').value,
+                "Entered_By": document.getElementById('enteredby').value,
+                "Entered_Date": document.getElementById('entereddate').value,
+                "Status": document.getElementById('status').value,
+                "Assigned _To": document.getElementById('assignedto').value,
+                "Fixed_By": document.getElementById('fixedby').value,
+                "Fixed_Date": document.getElementById('fixeddate').value,
+                "Available_in": document.getElementById('availablein').value,
+                "Comments": document.getElementById('comments').value
+            });
+
+            console.log(document.getElementById('entereddate').value);
+
+            var xhr = new XMLHttpRequest();
+            console.log(xhr);
+            xhr.open("POST", "http://localhost:3000/defect");
+            xhr.setRequestHeader("Content-type", "application/json");
+            console.log(this.responseText);
+            xhr.send(data);
+
+        }
+    </script>
+    <!-- ajax part end-->
+
 
     <!-- JQuery -->
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>

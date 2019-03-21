@@ -1,16 +1,40 @@
-[
-    {
-        "postId": 1,
-        "id": 1,
-        "name": "id labore ex et quam laborum",
-        "email": "Eliseo@gardner.biz",
-        "body": "laudantium enim quasi est quidem magnam voluptate ipsam eos\ntempora quo necessitatibus\ndolor quam autem quasi\nreiciendis et nam sapiente accusantium"
-    },
-    {
-        "postId": 1,
-        "id": 2,
-        "name": "quo vero reiciendis velit similique earum",
-        "email": "Jayne_Kuhic@sydney.com",
-        "body": "est natus enim nihil est dolore omnis voluptatem numquam\net omnis occaecati quod ullam at\nvoluptatem error expedita pariatur\nnihil sint nostrum voluptatem reiciendis et"
-    }
-]
+{
+    "defect": [
+        {
+            "id": 1,
+            "Defect_ID": "DEF001",
+            "Module": "Login",
+            "Description": "Login Form",
+            "Steps_to_recreate": "Step1 : Styling",
+            "Severity": "High",
+            "Priority": "Medium",
+            "Defect_Type": "UI",
+            "Entered_By": "x",
+            "Entered_Date": "10/03/2019",
+            "Status": "Opened",
+            "Assigned_To": "Theepan",
+            "Fixed_By": "Theepan",
+            "Fixed_Date": "12/03/2019",
+            "Available_in": "13/03/2019",
+            "Comments": "Form Element - MDBootstrap"
+        },
+        {
+            "Defect_ID": "DEF002",
+            "Module": "Signup",
+            "Description": "Login Form",
+            "Steps_to_recreate": "Step1 : Styling",
+            "Severity": "High",
+            "Priority": "High",
+            "Defect_Type": "UI",
+            "Entered_By": "x",
+            "Entered_Date": "10/03/2019",
+            "Status": "Opened",
+            "Assigned_To": "Kishanth",
+            "Fixed_By": "Kishanth",
+            "Fixed_Date": "12/03/2019",
+            "Available_in": "13/03/2019",
+            "Comments": "Form Element - MDBootstrap",
+            "id": 2
+        }
+    ]
+}
