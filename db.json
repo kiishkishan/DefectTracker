@@ -1,40 +1,58 @@
 {
-    "defect": [
-        {
-            "id": 1,
-            "Defect_ID": "DEF001",
-            "Module": "Login",
-            "Description": "Login Form",
-            "Steps_to_recreate": "Step1 : Styling",
-            "Severity": "High",
-            "Priority": "Medium",
-            "Defect_Type": "UI",
-            "Entered_By": "x",
-            "Entered_Date": "10/03/2019",
-            "Status": "Opened",
-            "Assigned_To": "Theepan",
-            "Fixed_By": "Theepan",
-            "Fixed_Date": "12/03/2019",
-            "Available_in": "13/03/2019",
-            "Comments": "Form Element - MDBootstrap"
-        },
-        {
-            "Defect_ID": "DEF002",
-            "Module": "Signup",
-            "Description": "Login Form",
-            "Steps_to_recreate": "Step1 : Styling",
-            "Severity": "High",
-            "Priority": "High",
-            "Defect_Type": "UI",
-            "Entered_By": "x",
-            "Entered_Date": "10/03/2019",
-            "Status": "Opened",
-            "Assigned_To": "Kishanth",
-            "Fixed_By": "Kishanth",
-            "Fixed_Date": "12/03/2019",
-            "Available_in": "13/03/2019",
-            "Comments": "Form Element - MDBootstrap",
-            "id": 2
-        }
-    ]
+  "defect": [
+    {
+      "id": 1,
+      "Defect_ID": "DEF001",
+      "Module": "Login",
+      "Description": "Login Form",
+      "Steps_to_recreate": "Step1 : Styling",
+      "Severity": "High",
+      "Priority": "Medium",
+      "Defect_Type": "UI",
+      "Entered_By": "x",
+      "Entered_Date": "10/03/2019",
+      "Status": "Opened",
+      "Assigned_To": "Theepan",
+      "Fixed_By": "Theepan",
+      "Fixed_Date": "12/03/2019",
+      "Available_in": "13/03/2019",
+      "Comments": "Form Element - MDBootstrap"
+    },
+    {
+      "Defect_ID": "DEF002",
+      "Module": "Signup",
+      "Description": "Login Form",
+      "Steps_to_recreate": "Step1 : Styling",
+      "Severity": "High",
+      "Priority": "High",
+      "Defect_Type": "UI",
+      "Entered_By": "x",
+      "Entered_Date": "10/03/2019",
+      "Status": "Opened",
+      "Assigned_To": "Kishanth",
+      "Fixed_By": "Kishanth",
+      "Fixed_Date": "12/03/2019",
+      "Available_in": "13/03/2019",
+      "Comments": "Form Element - MDBootstrap",
+      "id": 2
+    },
+    {
+      "Defect_ID": "DEF003",
+      "Module": "Main Menu",
+      "Description": "Dashboard Entry",
+      "Steps_to_recreate": "Navigation setup\nRouter\nUI",
+      "Severity": "High",
+      "Priority": "High",
+      "Defect_Type": "UI",
+      "Entered_By": "user2",
+      "Entered_Date": "2019-03-21",
+      "Status": "New",
+      "Assigned_To": "user2",
+      "Fixed_By": "user2",
+      "Fixed_Date": "2019-03-23",
+      "Available_in": "4 Days",
+      "Comments": "dashboard",
+      "id": 3
+    }
+  ]
 }
