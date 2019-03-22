@@ -54,5 +54,22 @@
       "Comments": "dashboard",
       "id": 3
     }
+  ],
+  "module": [
+    {
+      "id": 1,
+      "moduleID": "M001",
+      "moduleName": "Login"
+    },
+    {
+      "moduleID": "M003",
+      "moduleName": "Dashboard",
+      "id": 2
+    },
+    {
+      "moduleID": "M004",
+      "moduleName": "Admin",
+      "id": 3
+    }
   ]
 }

@@ -43,6 +43,14 @@
                 <!-- Dropdown -->
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown"
+                        aria-haspopup="true" aria-expanded="false">Modules</a>
+                    <div class="dropdown-menu dropdown-primary" aria-labelledby="navbarDropdownMenuLink">
+                        <a class="dropdown-item" href="#" id="dd">Create Modules</a>
+                    </div>
+                </li>
+                <!-- Dropdown -->
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown"
                         aria-haspopup="true" aria-expanded="false">Defect</a>
                     <div class="dropdown-menu dropdown-primary" aria-labelledby="navbarDropdownMenuLink">
                         <a class="dropdown-item" href="adddefect.html" id="dd">Create a Defect</a>
@@ -70,9 +78,7 @@
                     <p>
                         <label>Module</label>
                         <select id="module">
-                            <option value="Main Menu">Main Menu</option>
-                            <option value="Login">Login</option>
-                            <option value="SignUp">SignUp</option>
+                            <!--ajax here-->
                         </select>
                     </p>
                     <p class="full">
@@ -177,9 +183,29 @@
 
     <!-- ajax part start -->
     <script>
-        // console.log("asfas");
-        function addDefect() {
 
+        let xtr = new XMLHttpRequest();
+        xtr.open("GET", "http://localhost:3000/module");
+        xtr.onload = function () {
+
+            if (xtr.status == 200) {
+                let modules = JSON.parse(xtr.responseText);
+                let comboout = '';
+
+                for (var x in modules) {
+                    //alert(modules[x].moduleID);
+                    comboout += '<option value="' + modules[x].moduleID + '">' + modules[x].moduleName + '</option>';
+                    console.log(modules[x].moduleName);
+                    console.log(modules[x].moduleID);
+                }
+
+                document.getElementById('module').innerHTML = comboout;
+            }
+        }
+        xtr.send();
+
+
+        function addDefect() {
             var data = JSON.stringify({
                 "Defect_ID": document.getElementById('defectid').value,
                 "Module": document.getElementById('module').value,
@@ -191,7 +217,7 @@
                 "Entered_By": document.getElementById('enteredby').value,
                 "Entered_Date": document.getElementById('entereddate').value,
                 "Status": document.getElementById('status').value,
-                "Assigned_To": document.getElementById('assignedto').value,
+                "Assigned _To": document.getElementById('assignedto').value,
                 "Fixed_By": document.getElementById('fixedby').value,
                 "Fixed_Date": document.getElementById('fixeddate').value,
                 "Available_in": document.getElementById('availablein').value,
@@ -200,14 +226,17 @@
 
             console.log(document.getElementById('entereddate').value);
 
-            var xhr = new XMLHttpRequest();
+            let xhr = new XMLHttpRequest();
             console.log(xhr);
             xhr.open("POST", "http://localhost:3000/defect");
+
             xhr.setRequestHeader("Content-type", "application/json");
             console.log(this.responseText);
             xhr.send(data);
 
         }
+
+
     </script>
     <!-- ajax part end-->
 

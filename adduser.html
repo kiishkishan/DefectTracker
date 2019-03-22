@@ -44,14 +44,6 @@
                 <!-- Dropdown -->
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown"
-                        aria-haspopup="true" aria-expanded="false">Modules</a>
-                    <div class="dropdown-menu dropdown-primary" aria-labelledby="navbarDropdownMenuLink">
-                        <a class="dropdown-item" href="#" id="dd">Create Modules</a>
-                    </div>
-                </li>
-                <!-- Dropdown -->
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown"
                         aria-haspopup="true" aria-expanded="false">Defect</a>
                     <div class="dropdown-menu dropdown-primary" aria-labelledby="navbarDropdownMenuLink">
                         <a class="dropdown-item" href="adddefect.html" id="dd">Create a Defect</a>
@@ -62,56 +54,94 @@
         </div>
     </nav>
     <!-- nav bar end -->
+    <div style="height: 50px;">
+    </div>
+
+    <div class="container">
+
+        <!-- Material form register -->
+        <div class="card">
+
+            <h5 class="card-header info-color white-text text-center py-4">
+                <strong>Create User</strong>
+            </h5>
+
+            <!--Card content-->
+            <div class="card-body px-lg-5 pt-0">
+
+                <!-- Form -->
+                <form class="text-center" style="color: #757575;">
+
+                    <div class="form-row">
+                        <div class="col">
+                            <!-- First name -->
+                            <div class="md-form">
+                                <input type="text" id="materialRegisterFormFirstName" class="form-control">
+                                <label for="materialRegisterFormFirstName">First name</label>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <!-- Last name -->
+                            <div class="md-form">
+                                <input type="email" id="materialRegisterFormLastName" class="form-control">
+                                <label for="materialRegisterFormLastName">Last name</label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- E-mail -->
+                    <div class="md-form mt-0">
+                        <input type="email" id="materialRegisterFormEmail" class="form-control">
+                        <label for="materialRegisterFormEmail">E-mail</label>
+                    </div>
+
+                    <!-- Password -->
+                    <div class="md-form">
+                        <input type="password" id="materialRegisterFormPassword" class="form-control"
+                            aria-describedby="materialRegisterFormPasswordHelpBlock">
+                        <label for="materialRegisterFormPassword">Password</label>
+                        <small id="materialRegisterFormPasswordHelpBlock" class="form-text text-muted mb-4">
+                            At least 8 characters and 1 digit
+                        </small>
+                    </div>
+
+                    <!-- Phone number -->
+                    <div>
+                        <select class="mdb-select md-form mb-4 initialized" id="select">
+                            <option value="" disabled selected>Choose your option</option>
+                            <option value="1">Option 1</option>
+                            <option value="2">Option 2</option>
+                            <option value="3">Option 3</option>
+                        </select>
+                    </div>
+
+                    <!-- Newsletter -->
+                    <div class="form-check">
+                        <input type="checkbox" class="form-check-input" id="materialRegisterFormNewsletter">
+                        <label class="form-check-label" for="materialRegisterFormNewsletter">Subscribe to our
+                            newsletter</label>
+                    </div>
+
+                    <!-- Sign up button -->
+                    <button class="btn btn-outline-info btn-rounded btn-block my-4 waves-effect z-depth-0"
+                        type="submit">Sign in</button>
 
 
-    <div class="container-fluid">
-        <div style="height: 30px;"></div>
-        <div class="row">
 
+                    <hr>
 
+                    <!-- Terms of service -->
+                    <p>By clicking
+                        <em>Sign up</em> you agree to our
+                        <a href="" target="_blank">terms of service</a>
 
-
-            <div class="col-lg-12">
-
-
-                <!--Table-->
-                <table class="table-striped table-light table-responsive-xl table-bordered">
-
-                    <!--Table head-->
-                    <thead>
-                        <tr>
-                            <th scope="row">#</th>
-                            <th>Defect ID</th>
-                            <th>Module</th>
-                            <th>Description</th>
-                            <th>Steps to Recreate</th>
-                            <th>Severity</th>
-                            <th>Priority</th>
-                            <th>Defect Type</th>
-                            <th>Entered By</th>
-                            <th>Entered Date</th>
-                            <th>Status</th>
-                            <th>Assigned To</th>
-                            <th>Fixed By</th>
-                            <th>Fixed Date</th>
-                            <th>Available in</th>
-                            <th>Comments</th>
-                            <th></th>
-                            <th></th>
-                        </tr>
-                    </thead>
-                    <!--Table head-->
-                    <!--Table body-->
-                    <tbody id="getresult">
-                    </tbody>
-                    <!--Table body-->
-
-
-                </table>
-                <!--Table-->
+                </form>
+                <!-- Form -->
 
             </div>
+
         </div>
+        <!-- Material form register -->
 
     </div>
 
@@ -150,9 +180,7 @@
                         '<td>' + details[i].Fixed_Date + '</td>' +
                         '<td>' + details[i].Available_in + '</td>' +
                         '<td>' + details[i].Comments + '</td>' +
-                        '<td><a href="editdefect.html/' + details[i].id + '" value="' + details[i].id + '"><img src="https://img.icons8.com/nolan/35/000000/edit.png"></a></td>' +
-                        '<td><a href="editdefect.html/' + details[i].id + '" value="' + details[i].id + '"><img src="https://img.icons8.com/color/35/000000/trash.png"></a></td>'
-                    '</tr>';
+                        '</tr>';
                 }
 
                 // let x = details[0].Priority;

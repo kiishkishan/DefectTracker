@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Material Design Bootstrap</title>
+    <link rel="stylesheet" href="./style.css">
+
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css">
+    <!-- Bootstrap core CSS -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Material Design Bootstrap -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.7.5/css/mdb.min.css" rel="stylesheet">
+</head>
+
+<body>
+    <!-- nav bar -->
+    <nav class="navbar navbar-expand-lg navbar-dark primary-color">
+        <a class="navbar-brand" href="#">Navbar</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item active">
+                    <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                </li>
+                <!-- Dropdown -->
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown"
+                        aria-haspopup="true" aria-expanded="false">Users</a>
+                    <div class="dropdown-menu dropdown-primary" aria-labelledby="navbarDropdownMenuLink">
+                        <a class="dropdown-item" href="#" id="dd">Create User</a>
+                        <a class="dropdown-item" href="#" id="dd">View Users</a>
+                        <a class="dropdown-item" href="#" id="dd">Delete Users</a>
+                    </div>
+                </li>
+                <!-- Dropdown -->
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown"
+                        aria-haspopup="true" aria-expanded="false">Modules</a>
+                    <div class="dropdown-menu dropdown-primary" aria-labelledby="navbarDropdownMenuLink">
+                        <a class="dropdown-item" href="#" id="dd">Create Modules</a>
+                    </div>
+                </li>
+                <!-- Dropdown -->
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown"
+                        aria-haspopup="true" aria-expanded="false">Defect</a>
+                    <div class="dropdown-menu dropdown-primary" aria-labelledby="navbarDropdownMenuLink">
+                        <a class="dropdown-item" href="adddefect.html" id="dd">Create a Defect</a>
+                        <a class="dropdown-item" href="viewdefect.html" id="dd">Manage the Defect</a>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <!-- nav bar end -->
+    <div class="container">
+        <div class="row">
+            <div class="col"></div>
+            <div class="formwidth">
+                <!-- Default form contact -->
+                <form class="text-center border border-light p-5">
+                    <i class="prefix grey-text"><img src="https://img.icons8.com/color/65/000000/module.png"></i>
+                    <p class="h4 mb-4">Add Module</p>
+
+                    <!-- Module -->
+                    <input type="text" id="moduleid" class="form-control mb-4" placeholder="Module ID"
+                        style="height: 50px;">
+
+                    <!-- Email -->
+                    <input type="text" id="modulename" class="form-control mb-4" placeholder="Module Name"
+                        style="height: 50px;">
+
+                    <!-- Subject 
+                    <label>Subject</label>
+                    <select class="browser-default custom-select mb-4">
+                        <option value="" disabled>Choose option</option>
+                        <option value="1" selected>Feedback</option>
+                        <option value="2">Report a bug</option>
+                        <option value="3">Feature request</option>
+                        <option value="4">Feature request</option>
+                    </select> -->
+
+
+                    <br>
+                    <!-- Send button -->
+                    <button class="btn btn-info btn-block" id="btn-submit" type="button"
+                        onclick="addModule()">Send</button>
+
+                </form>
+                <!-- Default form contact -->
+            </div>
+            <div class="col"></div>
+        </div>
+
+
+    </div>
+
+    <!-- ajax part start -->
+    <script>
+        // console.log("asfas");
+        function addModule() {
+
+            var data = JSON.stringify({
+                "moduleID": document.getElementById('moduleid').value,
+                "moduleName": document.getElementById('modulename').value
+            });
+
+            console.log(document.getElementById('modulename').value);
+
+            var xhr = new XMLHttpRequest();
+            console.log(xhr);
+            xhr.open("POST", "http://localhost:3000/module");
+            xhr.setRequestHeader("Content-type", "application/json");
+            console.log(this.responseText);
+            xhr.send(data);
+
+        }
+    </script>
+    <!-- ajax part end-->
+
+
+    <!-- JQuery -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <!-- Bootstrap tooltips -->
+    <script type="text/javascript"
+        src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.4/umd/popper.min.js"></script>
+    <!-- Bootstrap core JavaScript -->
+    <script type="text/javascript"
+        src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <!-- MDB core JavaScript -->
+    <script type="text/javascript"
+        src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.7.5/js/mdb.min.js"></script>
+</body>
+
+</html>
